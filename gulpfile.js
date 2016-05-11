@@ -1,30 +1,7 @@
-var gulp = require('gulp');
-var notify = require('gulp-notify');
-var phpunit = require('gulp-phpunit');
+var elixir = require('laravel-elixir');
 
-gulp.task('unit', function () {
-    var options = {
-        debug: false,
-        notify: false,
-        configurationFile: './phpunit.xml'
-    };
+elixir.config.appPath = 'src';
 
-    gulp.src('./tests/**/*.php')
-        .pipe(phpunit('', options))
-        .on('error', notify.onError({
-            title: "Fail!",
-            message: "Error(s) occurred during testing.",
-            icon: __dirname + '/fail.png'
-        }))
-        .pipe(notify({
-            title: "Success!",
-            message: "All tests have returned green.",
-            icon: __dirname + '/pass.png'
-        }));
+elixir(function (mix) {
+    mix.phpUnit('', 'vendor\\bin\\phpunit --verbose');
 });
-
-gulp.task('watch', function () {
-    gulp.watch(['./tests/**/*.php', './src/**/*.php'], ['unit']);
-});
-
-gulp.task('default', ['unit', 'watch']);

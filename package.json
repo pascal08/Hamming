@@ -6,8 +6,7 @@
   "scripts": {},
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-notify": "^2.2.0",
-    "gulp-phpunit": "^0.14.0"
+    "laravel-elixir": "^5.0.0"
   },
   "dependencies": {}
 }

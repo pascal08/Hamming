@@ -12,13 +12,8 @@
     "phpunit/phpunit": "5.0.*"
   },
   "autoload": {
-    "psr-4": {
-      "Acme\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-0": {
-      "MyTests\\": "tests/"
-    }
+    "classmap": [
+      "src/"
+    ]
   }
 }
