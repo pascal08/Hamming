@@ -12,9 +12,12 @@ This is called the 'Hamming distance'.
 
 It is found by comparing two DNA strands and counting how many of the nucleotides are different from their equivalent in the other string.
 
+```
 GAGCCTACTAACGGGAT
 CATCGTAATGACGGCCT
 ^ ^ ^  ^ ^    ^^
+```
+
 The Hamming distance between these two DNA strands is 7.
 
 # Source
